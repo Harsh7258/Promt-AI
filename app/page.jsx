@@ -11,7 +11,7 @@ const Home = () => {
             </h1>
             <p className="desc text-center">
                 <span className="orange_gradient">Prompt-AI</span> is an open-source AI prompting tool to create, discover and share creative 
-                <span className="orange_gradient">prompts</span>.</p>
+                <span className="orange_gradient"> prompts</span>.</p>
         </section>
     );
 };
