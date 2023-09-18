@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 
 const Nav = () => {
-    const isUserSignedIn = true;
+    const { data: session } = useSession();
     const [providers, setProviders] = useState(null);
     const [toggleDropdown, setToggleDropdown] = useState(false);
 
@@ -71,7 +71,7 @@ const Nav = () => {
             </div>
 
             <div className='sm:hidden flex relative'>
-                {isUserSignedIn ? (
+                {session?.user ? (
                     <div className='flex'>
                         <Image 
                         src="/assets/images/logo.svg"
