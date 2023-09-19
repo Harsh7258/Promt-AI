@@ -5,13 +5,13 @@ const Home = () => {
                 Discover & Share
             <br className="max-md:hidden"/>
             <span className="text-center"> 
-            <span className="orange_gradient"> AI-Powered </span>
+            <span className="blue_gradient"> AI-Powered </span>
              Prompts
             </span>
             </h1>
             <p className="desc text-center">
-                <span className="orange_gradient">Prompt-AI</span> is an open-source AI prompting tool to create, discover and share creative 
-                <span className="orange_gradient"> prompts</span>.</p>
+                <span className="blue_gradient">Prompt-AI</span> is an open-source AI prompting tool to create, discover and share creative 
+                <span className="blue_gradient"> prompts</span>.</p>
         </section>
     );
 };
