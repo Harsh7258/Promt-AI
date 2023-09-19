@@ -13,12 +13,12 @@ const Nav = () => {
     const [toggleDropdown, setToggleDropdown] = useState(false);
 
     useEffect(() => {
-        const setProviders = async () => {
+        const setUpProviders = async () => {
             const res = await getProviders();
             setProviders(res);
         }
 
-        setProviders();
+        setUpProviders();
     }, [])
 
     return (
@@ -33,7 +33,7 @@ const Nav = () => {
             </Link>
 
             <div className='sm:flex hidden'>
-                {isUserSignedIn ? (
+                {session?.user ? (
                     <div className='flex gap-3 md:gap-5'>
                         <Link href="/create-prompt"
                         className='black_btn'>
@@ -45,8 +45,9 @@ const Nav = () => {
                             Sign Out
                         </button>
 
-                        <Link href="/proflie">
-                            <Image src="/assets/images/logo.svg"
+                        <Link href="/profile">
+                            <Image 
+                            src={session?.user.image}
                             width={32}
                             height={32}
                             className='rounded-full'
@@ -74,12 +75,12 @@ const Nav = () => {
                 {session?.user ? (
                     <div className='flex'>
                         <Image 
-                        src="/assets/images/logo.svg"
+                        src={session?.user.image}
                         width={32}
                         height={32}
                         className='rounded-full'
                         alt='Profile'
-                        onClick={() => setToggleDropdown((prev) => !prev)}
+                        onClick={() => setToggleDropdown(!toggleDropdown)}
                         />
 
                         {toggleDropdown && (
